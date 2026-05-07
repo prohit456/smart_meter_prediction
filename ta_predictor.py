@@ -15,9 +15,14 @@ from sklearn.metrics import r2_score
 
 def ensure_full_year_15min_data(df, year):
     """Ensures every meter has every 15-minute interval for the full year[cite: 3]."""
-    full_range = pd.date_range(start=f'{year}-01-01 00:00:00', 
+    try:
+      full_range = pd.date_range(start=f'{year}-01-01 00:00:00', 
                                end=f'{year}-12-31 23:45:00', 
                                freq='15T')
+    except:
+      full_range = pd.date_range(start=f'{year}-01-01 00:00:00', 
+                               end=f'{year}-12-31 23:45:00', 
+                               freq='15min')
     
     cleaned_list = []
     for meter_id in df['meter'].unique():
