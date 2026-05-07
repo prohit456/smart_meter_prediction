@@ -1,5 +1,6 @@
 download data for the script using 
 curl -L -o ./smart-meter-data-mathura-and-bareilly.zip https://www.kaggle.com/api/v1/datasets/download/jehanbhathena/smart-meter-data-mathura-and-bareilly
+
 unzip it in the folder
 run the following commands
 python process_data.py CEEW\ -\ Smart\ meter\ data\ Bareilly\ 2020.csv Bareilly_2020_15t.csv
