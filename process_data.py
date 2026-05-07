@@ -14,7 +14,11 @@ def convert_to_15min_data(ip_file, op_file):
       'meter': 'first' # Keep the meter ID
   }
   # Resample to 15-minute blocks
-  df_15min = df.groupby('meter').resample('15T').agg(agg_logic)
+  try:
+    df_15min = df.groupby('meter').resample('15T').agg(agg_logic)
+  except:
+    df_15min = df.groupby('meter').resample('15min').agg(agg_logic)
+
   
   # Reset index to get a clean dataframe
   df_15min = df_15min.drop(columns=['meter']).reset_index()
