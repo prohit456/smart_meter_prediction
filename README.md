@@ -15,9 +15,9 @@ python process_data.py SM\ Cleaned\ Data\ MH2021.csv Mathura_2021_15t.csv
 
 After running above commands, to run prediction
 
-python ta_predictor.py <dataset> <to_open_plot>
+python ta_predictor.py <bareilly/mathura> <to_open_plot>
 
-where <dataset> can be b for Bareilly, m for Mathura
+where <bareilly/mathura> can be b for Bareilly, m for Mathura
 <to_open_plot> can be p to open each plot in gui, else n to just save it to directory
 
 To run theft detection, first download data as follows
