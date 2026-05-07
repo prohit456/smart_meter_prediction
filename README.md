@@ -19,3 +19,17 @@ python ta_predictor.py <dataset> <to_open_plot>
 
 where <dataset> can be b for Bareilly, m for Mathura
 <to_open_plot> can be p to open each plot in gui, else n to just save it to directory
+
+To run theft detection, first download data as follows
+
+curl -L -o ./electricity-theft-detection.zip https://www.kaggle.com/api/v1/datasets/download/sreen28g10/electricity-theft-detection
+
+
+unzip the file and cleanup the data using
+
+python theft_data_cleanup.py data.csv fixed_data_clean.csv
+
+then run the algo using
+
+python theft_detection.py                     
+
